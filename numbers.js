@@ -18,4 +18,4 @@ result = Math.pow(8, 2);
 
 result = Math.random() * 11;
 
-console.log(result);
+console.log(result);    
