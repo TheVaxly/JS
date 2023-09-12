@@ -13,7 +13,8 @@ val = today.getMinutes();
 val = today.getTime();
 val = today.getTimezoneOffset();
 val = today.getMonth();
-val = today.getSeconds();
-
-
+val = today.getTime();
+val = new Date();
+val.setDate(13);
+val.setFullYear(2024);
 console.log(val);
