@@ -175,28 +175,33 @@ function isikukoodiKontroll(isikukood) {
    return isikukood.length === 11;
 }
 
-rl.question('Please enter an Estonian ID (isikukood): ', (userInput) => {
+function validateId() {
+    const userInput = document.getElementById('estonianId').value;
+    const outputElement = document.getElementById('output');
+    
+
     if (isikukoodiKontroll(userInput) && isBirthdateValid(userInput)) {
-      const ids = userInput;
-  
-      const values = getYear(ids);
-      const year = values[0];
-      const sex = values[1];
-      const month = getMonth(ids);
-      const hospital = getHospital(ids);
-      const kontrollnumber = kontrollNumber(ids);
-  
-      let day = ids[5] + ids[6];
-      if (day[0] === '0') {
-        day = day[1];
-      }
-  
-      console.log(`Sex: ${sex}`);
-      console.log(`Date of birth: ${day}. ${month} ${year}`);
-      console.log(`Hospital: ${hospital}`);
-      console.log(`Kontrollnumber: ${kontrollnumber}`);
+        const ids = userInput;
+        const values = getYear(ids);
+        const year = values[0];
+        const sex = values[1];
+        const month = getMonth(ids);
+        const hospital = getHospital(ids);
+        const kontrollnumber = kontrollNumber(ids);
+    
+        let day = ids[5] + ids[6];
+        if (day[0] === '0') {
+            day = day[1];
+        }
+
+        const result =
+            `Sex: ${sex}<br>` +
+            `Date of birth: ${day}. ${month} ${year}<br>` +
+            `Hospital: ${hospital}<br>` +
+            `Kontrollnumber: ${kontrollnumber}`;
+
+        outputElement.innerHTML = result;
     } else {
-      console.log('Invalid Estonian ID or birthdate.');
+        outputElement.innerHTML = 'Invalid Estonian ID or birthdate.';
     }
-    rl.close();
-  });
+}
