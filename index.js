@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3001
+const path = require('path');
 
-
-app.use(express.static('/home/marten/js-basics/isikukood website'));
+app.use(express.static(path.join(__dirname, 'isikukood website')));
 app.get('/', (req, res) => {
-    res.sendFile('/home/marten/js-basics/isikukood website/isikukood.html');
+    res.sendFile(path.join(__dirname + '/isikukood website/isikukood.html'));
     });
 
 app.listen(port, () => {
