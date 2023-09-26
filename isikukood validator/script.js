@@ -191,11 +191,17 @@ function validateId(userInput) {
         }
 
         const result =
-            `Sex: ${sex}<br>
-            Birthdate: ${day}.${month}.${year}<br>
-            Hospital: ${hospital}<br>
-            Kontrollnumber: ${kontrollnumber}<br>
-            <a href="/">Back</a>`;
+        `
+            <div id="output" style="text-align: center; justify-content: center; align-items: center;">
+                <h2>Isikukoodi kontroll</h2>
+                Isikukood: ${userInput}<br>
+                Sugu: ${sex}<br>
+                Sünnikuupäev: ${day}.${month}.${year}<br>
+                Haigla: ${hospital}<br>
+                Kontrollnumber: ${kontrollnumber}<br>
+                <a href="/">Uus Isikukood</a>
+            </div>
+        `;
 
         return result;
     } else {
