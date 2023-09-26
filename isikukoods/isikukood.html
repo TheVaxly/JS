@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estonian ID Validator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Estonian ID Validator</h1>
+        <form id="idForm" action="/validate" method="POST">
+            <input type="text" name="estonianId" placeholder="Enter Estonian ID (isikukood)">
+            <button type="submit">Validate</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+</body>
+</html>
