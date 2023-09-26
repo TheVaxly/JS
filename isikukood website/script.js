@@ -160,7 +160,7 @@ function getYear(isikukood) {
         sex = "Man"
     }
     let year = ids[1] + ids[2];
-    if (year > 23) {
+    if (ids[0] === '3' || ids[0] === '4') {
         year = '19' + year;
     } else if (ids[0] === '1' || ids[0] === '2') {
         year = '18' + year;
