@@ -1,5 +1,5 @@
 const readline = require('readline');
-
+const fs = require('fs');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -190,20 +190,7 @@ function validateId(userInput) {
             day = day[1];
         }
 
-        const result =
-        `
-            <div id="output" style="text-align: center; justify-content: center; align-items: center;">
-                <h2>Isikukoodi kontroll</h2>
-                Isikukood: ${userInput}<br>
-                Sugu: ${sex}<br>
-                Sünnikuupäev: ${day}.${month}.${year}<br>
-                Haigla: ${hospital}<br>
-                Kontrollnumber: ${kontrollnumber}<br>
-                <a href="/">Uus Isikukood</a>
-            </div>
-        `;
-
-        return result;
+        return {year, sex, month, hospital, kontrollnumber, day};
     } else {
         return 'Invalid Estonian ID or birthdate.';
     }
